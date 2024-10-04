@@ -1,9 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import Animated, { interpolateColor, useAnimatedStyle, useSharedValue, withSpring, withTiming } from "react-native-reanimated";
 
 import { TTabBarButton } from "@/lib/types";
-import { springConfig } from "@/lib/config";
 
 type TTabBarButtonV3 = {
     dimensions: {
@@ -16,17 +15,36 @@ type TTabBarButtonV3 = {
 
 const AnimatedTouchableOpacity = Animated.createAnimatedComponent(TouchableOpacity);
 
-export const ExpandBarTabButton = ({ isFocused, label, color, icon, colors, fontSize, dimensions, setDimensions, ...props }: TTabBarButtonV3) => {
+export const ExpandBarTabButton = ({
+    isFocused,
+    label,
+    color,
+    icon,
+    colors,
+    fontSize,
+    dimensions,
+    routes,
+    setDimensions,
+    ...props
+}: TTabBarButtonV3) => {
     const opacity = useSharedValue(0); // For fading in the label
 
     useEffect(() => {
-        opacity.value = withTiming(isFocused ? 1 : 0, { duration: 350 });
-    }, [isFocused, dimensions, opacity]);
+        opacity.value = withTiming(isFocused ? 1 : 0, { duration: 500 });
+    }, [isFocused, opacity]);
 
     const animatedHighlightContainer = useAnimatedStyle(() => {
         const animatedWidth = withSpring(isFocused ? dimensions.width - 10 : 0);
         return {
             width: animatedWidth,
+        };
+    });
+
+    const animatedContainer = useAnimatedStyle(() => {
+        const flexValue = withSpring(isFocused ? 2 : 1);
+
+        return {
+            flex: flexValue,
         };
     });
 
@@ -38,6 +56,8 @@ export const ExpandBarTabButton = ({ isFocused, label, color, icon, colors, font
             opacity: opacity.value, // Fade in effect
         };
     });
+
+    const randomizeLeftRightValue = () => {};
 
     return (
         <AnimatedTouchableOpacity
@@ -51,27 +71,17 @@ export const ExpandBarTabButton = ({ isFocused, label, color, icon, colors, font
                 }
             }}
             activeOpacity={1}
-            style={[
-                {
-                    justifyContent: "center",
-                    alignItems: "center",
-                    gap: 10,
-                    flexDirection: "row",
-                },
-                styles.container,
-            ]}
+            style={[styles.container, animatedContainer]}
             {...props}
         >
             {/* The animated expanding highlight */}
             <Animated.View
                 style={[
                     {
-                        position: "absolute",
-                        left: 5,
-                        backgroundColor: isFocused ? colors.focusColor : "transparent",
-                        borderRadius: 50,
                         height: dimensions.height,
+                        backgroundColor: isFocused ? colors.focusColor : "transparent",
                     },
+                    styles.highlightContainer,
                     animatedHighlightContainer,
                 ]}
             />
@@ -99,8 +109,12 @@ export const ExpandBarTabButton = ({ isFocused, label, color, icon, colors, font
 
 const styles = StyleSheet.create({
     container: {
-        flexGrow: 1,
         zIndex: 3,
+        justifyContent: "center",
+        alignItems: "center",
+        gap: 10,
+        flexDirection: "row",
     },
+    highlightContainer: { position: "absolute", borderRadius: 50, left: 5 },
     icon: { paddingVertical: 8, borderRadius: 50 },
 });

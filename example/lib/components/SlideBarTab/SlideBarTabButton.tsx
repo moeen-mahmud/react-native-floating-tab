@@ -41,6 +41,14 @@ export const SlideBarTabButton = ({
         };
     });
 
+    // const animatedContainer = useAnimatedStyle(() => {
+    //     const flexValue = withSpring(isFocused ? 2 : 1);
+
+    //     return {
+    //         flex: flexValue,
+    //     };
+    // });
+
     return (
         <AnimatedTouchableOpacity
             onLayout={e => {
@@ -53,13 +61,10 @@ export const SlideBarTabButton = ({
             }}
             activeOpacity={1}
             style={[
-                {
-                    justifyContent: "center",
-                    alignItems: "center",
-                    gap: 10,
-                    flexDirection: "row",
-                },
                 styles.container,
+                {
+                    flex: isFocused ? 2 : 1,
+                },
             ]}
             {...props}
         >
@@ -86,8 +91,11 @@ export const SlideBarTabButton = ({
 
 const styles = StyleSheet.create({
     container: {
-        flexGrow: 1,
         zIndex: 3,
+        justifyContent: "center",
+        alignItems: "center",
+        gap: 10,
+        flexDirection: "row",
     },
     icon: { paddingVertical: 8, borderRadius: 50 },
     iconWrapper: {

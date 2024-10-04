@@ -20,6 +20,7 @@ export default function TabLayout() {
             backBehavior="history"
             tabBar={props => <ExpandBarTab {...props} />}
             // tabBar={props => <RollingBallTab {...props} />}
+            // tabBar={props => <SharpCurvyTab {...props} />}
             // tabBar={props => <SlideBarTab {...props} />}
         >
             <Tabs.Screen
