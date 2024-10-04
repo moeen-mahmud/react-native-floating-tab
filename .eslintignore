@@ -1,0 +1,15 @@
+node_modules
+
+ios
+android
+
+# editor
+.vscode
+
+# build folder
+build
+
+# misc
+.eslintrc
+.prettierrc
+.editorconfig
