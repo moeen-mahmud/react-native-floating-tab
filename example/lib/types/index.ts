@@ -1,4 +1,11 @@
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
+
+export type TColors = {
+    focusColor: string;
+    primaryColor: string;
+    inactiveColor: string;
+};
+
 export type TTabBarButton = {
     isFocused: boolean;
     label: string;
@@ -7,11 +14,7 @@ export type TTabBarButton = {
     icon: any;
     routes: any[];
     onPress: () => void;
-    colors: {
-        focusColor: string;
-        primaryColor: string;
-        inactiveColor: string;
-    };
+    colors: TColors;
     fontSize: number;
 };
 

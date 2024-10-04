@@ -4,13 +4,13 @@ import Animated, { interpolateColor, useAnimatedStyle, useSharedValue, withSprin
 
 import { TTabBarButton } from "@/lib/types";
 
-type TTabBarButtonV3 = {
+type TSlideBarTabButton = {
     setDimensions: ({ height, width, x }: { height: number; width: number; x: number }) => void;
 } & TTabBarButton;
 
 const AnimatedTouchableOpacity = Animated.createAnimatedComponent(TouchableOpacity);
 
-export const SlideBarTabButton = ({
+export const SlideBarTabButton: React.FC<TSlideBarTabButton> = ({
     isFocused,
     label,
     routeName,
@@ -21,7 +21,7 @@ export const SlideBarTabButton = ({
     fontSize,
     setDimensions,
     ...props
-}: TTabBarButtonV3) => {
+}) => {
     const scale = useSharedValue(0);
 
     useEffect(() => {
@@ -40,14 +40,6 @@ export const SlideBarTabButton = ({
             ],
         };
     });
-
-    // const animatedContainer = useAnimatedStyle(() => {
-    //     const flexValue = withSpring(isFocused ? 2 : 1);
-
-    //     return {
-    //         flex: flexValue,
-    //     };
-    // });
 
     return (
         <AnimatedTouchableOpacity

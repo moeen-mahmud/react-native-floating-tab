@@ -4,7 +4,7 @@ import Animated, { interpolateColor, useAnimatedStyle, useSharedValue, withSprin
 
 import { TTabBarButton } from "@/lib/types";
 
-type TTabBarButtonV3 = {
+type TExpandBarTabButton = {
     dimensions: {
         height: number;
         width: number;
@@ -15,7 +15,7 @@ type TTabBarButtonV3 = {
 
 const AnimatedTouchableOpacity = Animated.createAnimatedComponent(TouchableOpacity);
 
-export const ExpandBarTabButton = ({
+export const ExpandBarTabButton: React.FC<TExpandBarTabButton> = ({
     isFocused,
     label,
     color,
@@ -26,7 +26,7 @@ export const ExpandBarTabButton = ({
     routes,
     setDimensions,
     ...props
-}: TTabBarButtonV3) => {
+}) => {
     const opacity = useSharedValue(0); // For fading in the label
 
     useEffect(() => {
@@ -56,8 +56,6 @@ export const ExpandBarTabButton = ({
             opacity: opacity.value, // Fade in effect
         };
     });
-
-    const randomizeLeftRightValue = () => {};
 
     return (
         <AnimatedTouchableOpacity

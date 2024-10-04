@@ -4,13 +4,13 @@ import Animated, { interpolate, interpolateColor, useAnimatedStyle, useSharedVal
 
 import { TTabBarButton } from "@/lib/types";
 
-type TTabBarButtonV2 = {
+type TRollingBallTabButton = {
     setDimensions: ({ height, width, x }: { height: number; width: number; x: number }) => void;
 } & TTabBarButton;
 
 const AnimatedTouchableOpacity = Animated.createAnimatedComponent(TouchableOpacity);
 
-export const RollingBallTabButton = ({
+export const RollingBallTabButton: React.FC<TRollingBallTabButton> = ({
     isFocused,
     label,
     routeName,
@@ -21,7 +21,7 @@ export const RollingBallTabButton = ({
     fontSize,
     setDimensions,
     ...props
-}: TTabBarButtonV2) => {
+}) => {
     const scale = useSharedValue(0);
 
     useEffect(() => {

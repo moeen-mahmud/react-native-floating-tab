@@ -1,12 +1,11 @@
 import { useEffect, useMemo, useState } from "react";
 import { StyleSheet, View } from "react-native";
-import Animated, { useAnimatedStyle, useSharedValue, withSpring } from "react-native-reanimated";
+import { useSharedValue, withSpring } from "react-native-reanimated";
 
-import { SlideBarTabButton } from "@/lib/components/SlideBarTab/SlideBarTabButton";
-import { TTabBar } from "@/lib/types";
 import { ExpandBarTabButton } from "@/lib/components/ExpandBarTab/ExpandBarTabButton";
+import { TTabBar } from "@/lib/types";
 
-export const ExpandBarTab = ({
+export const ExpandBarTab: React.FC<TTabBar> = ({
     state,
     descriptors,
     navigation,
@@ -15,9 +14,8 @@ export const ExpandBarTab = ({
     primaryColor = "#ffffff",
     inactiveColor = "#757172",
     fontSize = 11,
-}: TTabBar) => {
+}) => {
     const translateX = useSharedValue(0);
-    // const scale = useSharedValue(0);
 
     const [dimensions, setDimensions] = useState({
         height: 0,
@@ -28,21 +26,6 @@ export const ExpandBarTab = ({
     useEffect(() => {
         translateX.value = withSpring(dimensions.x);
     }, [state.index, dimensions]);
-
-    // useEffect(() => {
-    //     scale.value = withTiming(0.5, { duration: 0 }, () => {
-    //         scale.value = withTiming(1, { duration: 350 });
-    //     });
-    // }, [state.index]);
-
-    const animatedStyles = useAnimatedStyle(() => {
-        return {
-            transform: [
-                { translateX: translateX.value },
-                // { scale: scale.value },
-            ],
-        };
-    });
 
     const routes = useMemo(() => state.routes.filter(route => !["_sitemap", "+not-found"].includes(route.name)), [state.routes]);
 
@@ -99,27 +82,6 @@ export const ExpandBarTab = ({
                     />
                 );
             })}
-
-            {/* <Animated.View
-                style={[
-                    {
-                        width: dimensions.width,
-                        height: dimensions.height,
-                        left: 0,
-                    },
-                    styles.highlighterContainer,
-                    animatedStyles,
-                ]}
-            >
-                <View
-                    style={{
-                        backgroundColor: focusColor,
-                        width: dimensions.width - 20,
-                        height: dimensions.height,
-                        borderRadius: 50,
-                    }}
-                />
-            </Animated.View> */}
         </View>
     );
 };
@@ -142,13 +104,5 @@ const styles = StyleSheet.create({
         shadowOffset: { width: 0, height: -10 },
         shadowRadius: 10,
         shadowOpacity: 0.1,
-    },
-
-    highlighterContainer: {
-        zIndex: 2,
-        flex: 1,
-        position: "absolute",
-        justifyContent: "center",
-        alignItems: "center",
     },
 });

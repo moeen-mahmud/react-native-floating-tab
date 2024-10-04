@@ -5,7 +5,7 @@ import { TTabBar } from "../../types";
 
 import { SharpCurvyTabButton } from "@/lib/components/SharpCurvyTab/SharpCurvyTabButton";
 
-export const SharpCurvyTab = ({
+export const SharpCurvyTab: React.FC<TTabBar> = ({
     state,
     descriptors,
     navigation,
@@ -14,7 +14,7 @@ export const SharpCurvyTab = ({
     primaryColor = "#ffffff",
     inactiveColor = "#757172",
     fontSize = 11,
-}: TTabBar) => {
+}) => {
     const routes = useMemo(() => state.routes.filter(route => !["_sitemap", "+not-found"].includes(route.name)), [state.routes]);
 
     const findLabel = (routeName: string) => {

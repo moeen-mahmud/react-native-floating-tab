@@ -5,7 +5,7 @@ import Animated, { useAnimatedStyle, useSharedValue, withSpring } from "react-na
 import { SlideBarTabButton } from "@/lib/components/SlideBarTab/SlideBarTabButton";
 import { TTabBar } from "@/lib/types";
 
-export const SlideBarTab = ({
+export const SlideBarTab: React.FC<TTabBar> = ({
     state,
     descriptors,
     navigation,
@@ -14,9 +14,8 @@ export const SlideBarTab = ({
     primaryColor = "#ffffff",
     inactiveColor = "#757172",
     fontSize = 11,
-}: TTabBar) => {
+}) => {
     const translateX = useSharedValue(0);
-    // const scale = useSharedValue(0);
 
     const [dimensions, setDimensions] = useState({
         height: 0,
@@ -28,18 +27,9 @@ export const SlideBarTab = ({
         translateX.value = withSpring(dimensions.x);
     }, [state.index, dimensions]);
 
-    // useEffect(() => {
-    //     scale.value = withTiming(0.5, { duration: 0 }, () => {
-    //         scale.value = withTiming(1, { duration: 350 });
-    //     });
-    // }, [state.index]);
-
     const animatedStyles = useAnimatedStyle(() => {
         return {
-            transform: [
-                { translateX: translateX.value },
-                // { scale: scale.value },
-            ],
+            transform: [{ translateX: translateX.value }],
         };
     });
 
@@ -103,19 +93,20 @@ export const SlideBarTab = ({
                     {
                         width: dimensions.width,
                         height: dimensions.height,
-                        left: 0,
                     },
                     styles.highlighterContainer,
                     animatedStyles,
                 ]}
             >
                 <View
-                    style={{
-                        backgroundColor: focusColor,
-                        width: dimensions.width - 20,
-                        height: dimensions.height,
-                        borderRadius: 50,
-                    }}
+                    style={[
+                        {
+                            backgroundColor: focusColor,
+                            width: dimensions.width - 20,
+                            height: dimensions.height,
+                        },
+                        styles.highlighter,
+                    ]}
                 />
             </Animated.View>
         </View>
@@ -148,5 +139,7 @@ const styles = StyleSheet.create({
         position: "absolute",
         justifyContent: "center",
         alignItems: "center",
+        left: 0,
     },
+    highlighter: { borderRadius: 50 },
 });

@@ -5,7 +5,7 @@ import Animated, { useAnimatedStyle, useSharedValue, withSpring } from "react-na
 import { RollingBallTabButton } from "@/lib/components/RollingBallTab/RollingBallTabButton";
 import { TTabBar } from "@/lib/types";
 
-export const RollingBallTab = ({
+export const RollingBallTab: React.FC<TTabBar> = ({
     state,
     descriptors,
     navigation,
@@ -14,7 +14,7 @@ export const RollingBallTab = ({
     primaryColor = "#ffffff",
     inactiveColor = "#757172",
     fontSize = 11,
-}: TTabBar) => {
+}) => {
     const translateX = useSharedValue(0);
 
     const [dimensions, setDimensions] = useState({
@@ -92,7 +92,6 @@ export const RollingBallTab = ({
                 style={[
                     {
                         width: dimensions.width,
-                        paddingVertical: 10,
                     },
                     styles.highlighterContainer,
                     animatedStyles,
@@ -133,6 +132,7 @@ const styles = StyleSheet.create({
     },
 
     highlighterContainer: {
+        paddingVertical: 10,
         zIndex: 2,
         flex: 1,
         position: "absolute",
