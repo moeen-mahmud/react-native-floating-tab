@@ -1,0 +1,10 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "paths": {
+      "react-native-floating-tab": ["../src/index"],
+      "react-native-floating-tab/*": ["../src/*"]
+    }
+  }
+}
