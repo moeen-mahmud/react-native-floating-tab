@@ -1,10 +1,11 @@
 import { useMemo } from "react";
-import { StyleSheet, View } from "react-native";
+import { Platform, StyleSheet, View } from "react-native";
 
-import { TabBarButtonV1 } from "./TabBarButtonV1";
 import { TTabBar } from "../../types";
 
-export const TabBarV1 = ({
+import { SharpCurvyTabButton } from "@/lib/components/SharpCurvyTab/SharpCurvyTabButton";
+
+export const SharpCurvyTab = ({
     state,
     descriptors,
     navigation,
@@ -32,7 +33,7 @@ export const TabBarV1 = ({
             <View
                 style={{
                     ...styles.tabbar,
-                    bottom: insets.bottom,
+                    bottom: Platform.OS === "ios" ? insets.bottom : insets.bottom + 20,
                 }}
             >
                 {routes.map(route => {
@@ -43,7 +44,7 @@ export const TabBarV1 = ({
                     const isFocused = state.index === state.routes.indexOf(route);
 
                     return (
-                        <TabBarButtonV1
+                        <SharpCurvyTabButton
                             key={route.name}
                             onPress={() => handleOnPress(route.name)}
                             isFocused={isFocused}

@@ -10,6 +10,6 @@ android
 build
 
 # misc
-.eslintrc
+.eslintrc.js
 .prettierrc
 .editorconfig

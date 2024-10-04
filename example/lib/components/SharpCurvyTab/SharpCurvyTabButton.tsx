@@ -7,7 +7,7 @@ import { TTabBarButton } from "../../types";
 
 const AnimatedTouchableOpacity = Animated.createAnimatedComponent(TouchableOpacity);
 
-export const TabBarButtonV1 = ({ isFocused, label, routeName, color, icon, routes, colors, fontSize, ...props }: TTabBarButton) => {
+export const SharpCurvyTabButton = ({ isFocused, label, routeName, color, icon, routes, colors, fontSize, ...props }: TTabBarButton) => {
     const animatedStyles = useAnimatedStyle(() => {
         const scale = withSpring(isFocused ? 1.4 : 1, springConfig);
 

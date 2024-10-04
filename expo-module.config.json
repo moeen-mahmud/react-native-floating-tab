@@ -1,9 +1,11 @@
 {
-  "platforms": ["ios", "tvos", "android", "web"],
-  "ios": {
-    "modules": ["ReactNativeFloatingTabModule"]
-  },
-  "android": {
-    "modules": ["com.moeen.reactnativefloatingtab.ReactNativeFloatingTabModule"]
-  }
+    "platforms": ["ios", "android"],
+    "ios": {
+        "modules": ["ReactNativeFloatingTabModule"]
+    },
+    "android": {
+        "modules": [
+            "com.moeen.reactnativefloatingtab.ReactNativeFloatingTabModule"
+        ]
+    }
 }
