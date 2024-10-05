@@ -3,17 +3,19 @@ import { StyleSheet, View } from "react-native";
 import { useSharedValue, withSpring } from "react-native-reanimated";
 
 import { ExpandBarTabButton } from "@/lib/components/ExpandBarTab/ExpandBarTabButton";
+import { colorFamilies, initialFontSize } from "@/lib/config";
 import { TTabBar } from "@/lib/types";
+import { shadow } from "@/lib/styles";
 
 export const ExpandBarTab: React.FC<TTabBar> = ({
     state,
     descriptors,
     navigation,
     insets,
-    focusColor = "#EF4D75",
-    primaryColor = "#ffffff",
-    inactiveColor = "#757172",
-    fontSize = 11,
+    focusColor = colorFamilies.focusColor,
+    primaryColor = colorFamilies.primaryColor,
+    inactiveColor = colorFamilies.inactiveColor,
+    fontSize = initialFontSize,
 }) => {
     const translateX = useSharedValue(0);
 
@@ -42,11 +44,14 @@ export const ExpandBarTab: React.FC<TTabBar> = ({
 
     return (
         <View
-            style={{
-                ...styles.tabbar,
-                backgroundColor: primaryColor,
-                bottom: insets.bottom,
-            }}
+            style={[
+                {
+                    ...styles.tabbar,
+                    backgroundColor: primaryColor,
+                    bottom: insets.bottom,
+                },
+                shadow,
+            ]}
         >
             {routes.map(route => {
                 const label = findLabel(route.name);
@@ -100,9 +105,5 @@ const styles = StyleSheet.create({
         paddingVertical: 10,
         borderRadius: 8,
         borderCurve: "continuous",
-        shadowColor: "black",
-        shadowOffset: { width: 0, height: -10 },
-        shadowRadius: 10,
-        shadowOpacity: 0.1,
     },
 });

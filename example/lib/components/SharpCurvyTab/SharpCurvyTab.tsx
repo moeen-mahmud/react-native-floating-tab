@@ -4,16 +4,18 @@ import { Platform, StyleSheet, View } from "react-native";
 import { TTabBar } from "../../types";
 
 import { SharpCurvyTabButton } from "@/lib/components/SharpCurvyTab/SharpCurvyTabButton";
+import { colorFamilies, initialFontSize } from "@/lib/config";
+import { shadow } from "@/lib/styles";
 
 export const SharpCurvyTab: React.FC<TTabBar> = ({
     state,
     descriptors,
     navigation,
     insets,
-    focusColor = "#EF4D75",
-    primaryColor = "#ffffff",
-    inactiveColor = "#757172",
-    fontSize = 11,
+    focusColor = colorFamilies.focusColor,
+    primaryColor = colorFamilies.primaryColor,
+    inactiveColor = colorFamilies.inactiveColor,
+    fontSize = initialFontSize,
 }) => {
     const routes = useMemo(() => state.routes.filter(route => !["_sitemap", "+not-found"].includes(route.name)), [state.routes]);
 
@@ -31,10 +33,13 @@ export const SharpCurvyTab: React.FC<TTabBar> = ({
     return (
         <View style={styles.container}>
             <View
-                style={{
-                    ...styles.tabbar,
-                    bottom: Platform.OS === "ios" ? insets.bottom : insets.bottom + 20,
-                }}
+                style={[
+                    {
+                        ...styles.tabbar,
+                        bottom: Platform.OS === "ios" ? insets.bottom : insets.bottom + 20,
+                    },
+                    shadow,
+                ]}
             >
                 {routes.map(route => {
                     const label = findLabel(route.name);
@@ -86,9 +91,5 @@ const styles = StyleSheet.create({
         alignItems: "center",
         backgroundColor: "transparent",
         borderCurve: "continuous",
-        shadowColor: "black",
-        shadowOffset: { width: 0, height: 10 },
-        shadowRadius: 10,
-        shadowOpacity: 0.1,
     },
 });

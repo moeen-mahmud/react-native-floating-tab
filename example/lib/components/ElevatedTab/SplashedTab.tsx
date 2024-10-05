@@ -2,17 +2,19 @@ import { useMemo } from "react";
 import { Platform, StyleSheet, View } from "react-native";
 
 import { ElevatedTabButton } from "@/lib/components/ElevatedTab/SplashedTabButton";
+import { colorFamilies, initialFontSize } from "@/lib/config";
 import { TTabBar } from "@/lib/types";
+import { shadow } from "@/lib/styles";
 
 export const ElevatedTab: React.FC<TTabBar> = ({
     state,
     descriptors,
     navigation,
     insets,
-    focusColor = "#EF4D75",
-    primaryColor = "#ffffff",
-    inactiveColor = "#757172",
-    fontSize = 11,
+    focusColor = colorFamilies.focusColor,
+    primaryColor = colorFamilies.primaryColor,
+    inactiveColor = colorFamilies.inactiveColor,
+    fontSize = initialFontSize,
 }) => {
     const routes = useMemo(() => state.routes.filter(route => !["_sitemap", "+not-found"].includes(route.name)), [state.routes]);
 
@@ -30,11 +32,14 @@ export const ElevatedTab: React.FC<TTabBar> = ({
     return (
         <View style={styles.container}>
             <View
-                style={{
-                    ...styles.tabbar,
-                    backgroundColor: primaryColor,
-                    bottom: Platform.OS === "ios" ? insets.bottom : insets.bottom + 20,
-                }}
+                style={[
+                    {
+                        ...styles.tabbar,
+                        backgroundColor: primaryColor,
+                        bottom: Platform.OS === "ios" ? insets.bottom : insets.bottom + 20,
+                    },
+                    shadow,
+                ]}
             >
                 {routes.map(route => {
                     const label = findLabel(route.name);
@@ -86,10 +91,6 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
         alignItems: "center",
         borderCurve: "continuous",
-        shadowColor: "black",
-        shadowOffset: { width: 0, height: 10 },
-        shadowRadius: 10,
-        shadowOpacity: 0.1,
         borderRadius: 8,
     },
 });
