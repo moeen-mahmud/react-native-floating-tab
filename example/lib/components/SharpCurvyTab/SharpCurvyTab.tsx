@@ -5,7 +5,7 @@ import { TTabBar } from "../../types";
 
 import { SharpCurvyTabButton } from "@/lib/components/SharpCurvyTab/SharpCurvyTabButton";
 import { colorFamilies, initialFontSize } from "@/lib/config";
-import { shadow } from "@/lib/styles";
+import { shadow, tabbar, tabContainer } from "@/lib/styles";
 
 export const SharpCurvyTab: React.FC<TTabBar> = ({
     state,
@@ -79,17 +79,10 @@ export const SharpCurvyTab: React.FC<TTabBar> = ({
     );
 };
 const styles = StyleSheet.create({
-    container: {
-        flexDirection: "row",
-        justifyContent: "center",
-        alignItems: "center",
-    },
+    container: tabContainer,
     tabbar: {
-        position: "absolute",
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center",
+        ...tabbar,
         backgroundColor: "transparent",
-        borderCurve: "continuous",
+        justifyContent: "space-between",
     },
 });

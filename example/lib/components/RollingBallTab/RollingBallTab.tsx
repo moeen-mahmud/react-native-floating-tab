@@ -4,8 +4,8 @@ import Animated, { useAnimatedStyle, useSharedValue, withSpring } from "react-na
 
 import { RollingBallTabButton } from "@/lib/components/RollingBallTab/RollingBallTabButton";
 import { colorFamilies, initialFontSize } from "@/lib/config";
+import { shadow, tabbar, tabContainer } from "@/lib/styles";
 import { TTabBar } from "@/lib/types";
-import { shadow } from "@/lib/styles";
 
 export const RollingBallTab: React.FC<TTabBar> = ({
     state,
@@ -54,6 +54,7 @@ export const RollingBallTab: React.FC<TTabBar> = ({
             style={[
                 {
                     ...styles.tabbar,
+                    backgroundColor: primaryColor,
                     bottom: insets.bottom,
                 },
                 shadow,
@@ -115,21 +116,13 @@ export const RollingBallTab: React.FC<TTabBar> = ({
     );
 };
 const styles = StyleSheet.create({
-    container: {
-        flexDirection: "row",
-        justifyContent: "center",
-        alignItems: "center",
-    },
+    container: tabContainer,
     tabbar: {
-        position: "absolute",
-        flexDirection: "row",
+        ...tabbar,
         justifyContent: "space-between",
-        alignItems: "center",
-        backgroundColor: "white",
+
         marginHorizontal: 20,
         paddingVertical: 10,
-        borderRadius: 8,
-        borderCurve: "continuous",
     },
 
     highlighterContainer: {

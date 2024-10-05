@@ -3,8 +3,8 @@ import { Platform, StyleSheet, View } from "react-native";
 
 import { ElevatedTabButton } from "@/lib/components/ElevatedTab/SplashedTabButton";
 import { colorFamilies, initialFontSize } from "@/lib/config";
+import { shadow, tabbar, tabContainer } from "@/lib/styles";
 import { TTabBar } from "@/lib/types";
-import { shadow } from "@/lib/styles";
 
 export const ElevatedTab: React.FC<TTabBar> = ({
     state,
@@ -80,17 +80,9 @@ export const ElevatedTab: React.FC<TTabBar> = ({
     );
 };
 const styles = StyleSheet.create({
-    container: {
-        flexDirection: "row",
-        justifyContent: "center",
-        alignItems: "center",
-    },
+    container: tabContainer,
     tabbar: {
-        position: "absolute",
-        flexDirection: "row",
+        ...tabbar,
         justifyContent: "space-between",
-        alignItems: "center",
-        borderCurve: "continuous",
-        borderRadius: 8,
     },
 });

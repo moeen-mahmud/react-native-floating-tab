@@ -4,8 +4,8 @@ import Animated, { useAnimatedStyle, useSharedValue, withSpring } from "react-na
 
 import { SlideBarTabButton } from "@/lib/components/SlideBarTab/SlideBarTabButton";
 import { colorFamilies, initialFontSize } from "@/lib/config";
+import { shadow, tabbar, tabContainer } from "@/lib/styles";
 import { TTabBar } from "@/lib/types";
-import { shadow } from "@/lib/styles";
 
 export const SlideBarTab: React.FC<TTabBar> = ({
     state,
@@ -118,20 +118,13 @@ export const SlideBarTab: React.FC<TTabBar> = ({
     );
 };
 const styles = StyleSheet.create({
-    container: {
-        flexDirection: "row",
-        justifyContent: "center",
-        alignItems: "center",
-    },
+    container: tabContainer,
     tabbar: {
-        position: "absolute",
-        flexDirection: "row",
+        ...tabbar,
         justifyContent: "center",
-        alignItems: "center",
+
         marginHorizontal: 20,
         paddingVertical: 10,
-        borderRadius: 8,
-        borderCurve: "continuous",
     },
 
     highlighterContainer: {
