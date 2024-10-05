@@ -25,3 +25,14 @@ export type TTabBar = {
     tabBackgroundColor?: string;
     fontSize?: number;
 } & BottomTabBarProps;
+
+export type TFilteredRoute = {
+    state: BottomTabBarProps["state"];
+    exclude?: string[];
+};
+
+export type TFindLabel = {
+    routeName: string;
+    routes: BottomTabBarProps["state"]["routes"];
+    descriptors: BottomTabBarProps["descriptors"];
+};

@@ -2,4 +2,4 @@ export * from "./SharpCurvyTab/SharpCurvyTab";
 export * from "./RollingBallTab/RollingBallTab";
 export * from "./SlideBarTab/SlideBarTab";
 export * from "./ExpandBarTab/ExpandBarTab";
-export * from "./ElevatedTab/SplashedTab";
+export * from "./ElevatedTab/ElevatedTab";

@@ -3,9 +3,10 @@ import { StyleSheet, View } from "react-native";
 import Animated, { useAnimatedStyle, useSharedValue, withSpring } from "react-native-reanimated";
 
 import { RollingBallTabButton } from "@/lib/components/RollingBallTab/RollingBallTabButton";
-import { colorFamilies, initialFontSize } from "@/lib/config";
+import { colorFamilies, iconSize, initialFontSize } from "@/lib/config";
 import { shadow, tabbar, tabContainer } from "@/lib/styles";
 import { TTabBar } from "@/lib/types";
+import { filteredRoute, findLabel } from "@/lib/utils";
 
 export const RollingBallTab: React.FC<TTabBar> = ({
     state,
@@ -36,14 +37,7 @@ export const RollingBallTab: React.FC<TTabBar> = ({
         };
     });
 
-    const routes = useMemo(() => state.routes.filter(route => !["_sitemap", "+not-found"].includes(route.name)), [state.routes]);
-
-    const findLabel = (routeName: string) => {
-        const route = routes.find(route => route.name === routeName);
-        if (!route) return routeName;
-        const { options } = descriptors[route.key];
-        return options.tabBarLabel ?? options.title ?? "";
-    };
+    const routes = useMemo(() => filteredRoute({ state, exclude: ["_sitemap", "+not-found"] }), [state.routes]);
 
     const handleOnPress = (routeName: string) => {
         navigation.navigate(routeName);
@@ -61,7 +55,11 @@ export const RollingBallTab: React.FC<TTabBar> = ({
             ]}
         >
             {routes.map(route => {
-                const label = findLabel(route.name);
+                const label = findLabel({
+                    routeName: route.name,
+                    descriptors,
+                    routes,
+                });
                 const { options } = descriptors[route.key];
 
                 const isFocused = state.index === state.routes.indexOf(route);
@@ -80,7 +78,7 @@ export const RollingBallTab: React.FC<TTabBar> = ({
                             options.tabBarIcon({
                                 focused: isFocused,
                                 color: isFocused ? primaryColor : inactiveColor,
-                                size: 20,
+                                size: iconSize,
                             })
                         }
                         colors={{

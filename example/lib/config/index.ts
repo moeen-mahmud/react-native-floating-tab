@@ -11,3 +11,5 @@ export const colorFamilies = {
 };
 
 export const initialFontSize = 11;
+
+export const iconSize = 20;
