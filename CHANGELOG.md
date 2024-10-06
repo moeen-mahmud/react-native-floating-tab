@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.0.9-beta.1](https://github.com/moeen-mahmud/react-native-floating-tab/compare/v1.0.8-beta.1...v1.0.9-beta.1) (2024-10-06)
+
+
+### Bug Fixes
+
+* added release key ([116b95c](https://github.com/moeen-mahmud/react-native-floating-tab/commit/116b95c551b3cfdd441faa7c3353e83be1af7220))
+* update .release.yml according to the doc ([e4326e6](https://github.com/moeen-mahmud/react-native-floating-tab/commit/e4326e6d8a30367ef170463ce89783712247a74f))
+* updates workflow again ([392ad12](https://github.com/moeen-mahmud/react-native-floating-tab/commit/392ad12f6b903359082a22fdd061c02dff4bee78))
+
 ## [1.0.8-beta.1](https://github.com/moeen-mahmud/react-native-floating-tab/compare/v1.0.7-beta.1...v1.0.8-beta.1) (2024-10-06)
 
 
