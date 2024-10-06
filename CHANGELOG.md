@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.8-beta.1](https://github.com/moeen-mahmud/react-native-floating-tab/compare/v1.0.7-beta.1...v1.0.8-beta.1) (2024-10-06)
+
+
+### Bug Fixes
+
+* removes npm ci command from workflow release.yml adds matrix ([913a5d6](https://github.com/moeen-mahmud/react-native-floating-tab/commit/913a5d68acea822071c04366465fd558b8898c19))
+
 ## [1.0.7-beta.1](https://github.com/moeen-mahmud/react-native-floating-tab/compare/v1.0.6-beta.1...v1.0.7-beta.1) (2024-10-06)
 
 
