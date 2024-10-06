@@ -34,6 +34,7 @@
         "@commitlint/cz-commitlint": "^19.5.0",
         "@commitlint/prompt-cli": "^19.5.0",
         "@types/react": "^18.0.25",
+        "conventional-changelog-atom": "^5.0.0",
         "expo-module-scripts": "^3.5.2",
         "expo-modules-core": "^1.12.24",
         "husky": "^9.1.6"

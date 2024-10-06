@@ -39,7 +39,6 @@ jobs:
                   token: ${{ secrets.RELEASE_KEY }}
                   release-type: "node"
             - name: Publish package
-              if: ${{steps.release.outputs.release_created}}
               run: npm publish
               env:
                   NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_KEY}}
