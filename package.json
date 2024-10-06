@@ -6,10 +6,12 @@
     "types": "build/index.d.ts",
     "scripts": {
         "build": "expo-module build",
-        "lint": "expo-module lint",
+        "lint": "expo-module lint -- --fix",
         "open:ios": "xed example/ios",
         "open:android": "open -a \"Android Studio\" example/android",
-        "release": "standard-version"
+        "release": "standard-version --no-verify",
+        "prepare": "husky",
+        "commit": "commit"
     },
     "keywords": [
         "react-native",
@@ -29,9 +31,14 @@
     "license": "MIT",
     "homepage": "https://github.com/moeen-mahmud/react-native-floating-tab#readme",
     "devDependencies": {
+        "@commitlint/cli": "^19.5.0",
+        "@commitlint/config-conventional": "^19.5.0",
+        "@commitlint/cz-commitlint": "^19.5.0",
+        "@commitlint/prompt-cli": "^19.5.0",
         "@types/react": "^18.0.25",
         "expo-module-scripts": "^3.5.2",
         "expo-modules-core": "^1.12.24",
+        "husky": "^9.1.6",
         "standard-version": "^9.5.0"
     },
     "peerDependencies": {

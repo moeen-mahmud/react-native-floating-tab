@@ -1,4 +1,4 @@
-import { TDetermineFocused, TFilteredRoute, TFindLabel, THandleNavigate, TMapOperation } from "@react-native-floating-tab";
+import { TDetermineFocused, TFilteredRoute, TFindLabel, THandleNavigate, TMapOperation } from "../types";
 
 export const filteredRoute = ({ state, exclude }: TFilteredRoute) => {
     return state.routes.filter(route => (exclude?.length ? !exclude.includes(route.name) : !["_sitemap", "+not-found"].includes(route.name)));

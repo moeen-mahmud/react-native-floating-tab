@@ -1,8 +1,10 @@
-import { sizes, TTabBarButton } from "@react-native-floating-tab";
 import { BottomTabNavigationOptions } from "@react-navigation/bottom-tabs";
 import { useEffect } from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import Animated, { interpolateColor, useAnimatedStyle, useSharedValue, withSpring, withTiming } from "react-native-reanimated";
+
+import { sizes } from "../../styles";
+import { TTabBarButton } from "../../types";
 
 type TElevatedTabButton = TTabBarButton & {
     options: BottomTabNavigationOptions;

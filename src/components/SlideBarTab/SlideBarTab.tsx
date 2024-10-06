@@ -1,21 +1,12 @@
-import {
-    colorFamilies,
-    filteredRoute,
-    handleNavigate,
-    iconSize,
-    initialFontSize,
-    mapOperation,
-    shadow,
-    sizes,
-    tabbar,
-    tabContainer,
-    TTabBar,
-} from "@react-native-floating-tab";
 import { useEffect, useMemo, useState } from "react";
 import { Platform, StyleSheet, View } from "react-native";
 import Animated, { useAnimatedStyle, useSharedValue, withSpring } from "react-native-reanimated";
 
 import { SlideBarTabButton } from "./SlideBarTabButton";
+import { colorFamilies, iconSize, initialFontSize } from "../../config";
+import { shadow, sizes, tabbar, tabContainer } from "../../styles";
+import { TTabBar } from "../../types";
+import { filteredRoute, handleNavigate, mapOperation } from "../../utils";
 
 export const SlideBarTab: React.FC<TTabBar> = ({
     state,
