@@ -10,7 +10,8 @@
         "open:ios": "xed example/ios",
         "open:android": "open -a \"Android Studio\" example/android",
         "release": "standard-version",
-        "prepare": "husky"
+        "prepare": "husky",
+        "commit": "commit"
     },
     "keywords": [
         "react-native",
@@ -33,6 +34,7 @@
         "@commitlint/cli": "^19.5.0",
         "@commitlint/config-conventional": "^19.5.0",
         "@commitlint/cz-commitlint": "^19.5.0",
+        "@commitlint/prompt-cli": "^19.5.0",
         "@types/react": "^18.0.25",
         "expo-module-scripts": "^3.5.2",
         "expo-modules-core": "^1.12.24",

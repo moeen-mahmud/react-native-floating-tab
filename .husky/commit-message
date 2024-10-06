@@ -1,2 +1,0 @@
-# .husky/commit-message
-echo "npx --no -- commitlint --edit \$1" > .husky/commit-msg
