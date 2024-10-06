@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.7-beta.1](https://github.com/moeen-mahmud/react-native-floating-tab/compare/v1.0.6-beta.1...v1.0.7-beta.1) (2024-10-06)
+
+
+### Bug Fixes
+
+* removes npm ci command from workflow release.yml ([b536b8c](https://github.com/moeen-mahmud/react-native-floating-tab/commit/b536b8c5c1e84e6deba481b93a733cfedf973843))
+
 ## [1.0.6-beta.1](https://github.com/moeen-mahmud/react-native-floating-tab/compare/v1.0.5-beta.1...v1.0.6-beta.1) (2024-10-06)
 
 
