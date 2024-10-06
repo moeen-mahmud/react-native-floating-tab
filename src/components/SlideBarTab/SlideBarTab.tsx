@@ -13,7 +13,6 @@ import {
 } from "@react-native-floating-tab";
 import { useEffect, useMemo, useState } from "react";
 import { Platform, StyleSheet, View } from "react-native";
-
 import Animated, { useAnimatedStyle, useSharedValue, withSpring } from "react-native-reanimated";
 
 import { SlideBarTabButton } from "./SlideBarTabButton";
