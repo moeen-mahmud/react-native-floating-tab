@@ -1,6 +1,6 @@
 {
     "name": "react-native-floating-tab",
-    "version": "0.1.0",
+    "version": "1.0.1",
     "description": "A collection of simple animated floating bottom tabs for React Native. Supports React Navigation and Expo Router.",
     "main": "build/index.js",
     "types": "build/index.d.ts",
@@ -8,7 +8,8 @@
         "build": "expo-module build",
         "lint": "expo-module lint",
         "open:ios": "xed example/ios",
-        "open:android": "open -a \"Android Studio\" example/android"
+        "open:android": "open -a \"Android Studio\" example/android",
+        "release": "standard-version"
     },
     "keywords": [
         "react-native",
@@ -27,11 +28,11 @@
     "author": "Moeen Mahmud <write2fahim007@gmail.com> (https://github.com/moeen-mahmud)",
     "license": "MIT",
     "homepage": "https://github.com/moeen-mahmud/react-native-floating-tab#readme",
-    "dependencies": {},
     "devDependencies": {
         "@types/react": "^18.0.25",
         "expo-module-scripts": "^3.5.2",
-        "expo-modules-core": "^1.12.24"
+        "expo-modules-core": "^1.12.24",
+        "standard-version": "^9.5.0"
     },
     "peerDependencies": {
         "@react-navigation/bottom-tabs": "*",
