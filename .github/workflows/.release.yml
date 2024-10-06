@@ -19,22 +19,19 @@ jobs:
             matrix:
                 node-version: [22.x]
         steps:
-            - name: Release please
+            - uses: googleapis/release-please-action@v4
               id: release
-              uses: googleapis/release-please-action@v4
               with:
-                  token: ${{ secrets.RELEASE_KEY }}
                   release-type: "node"
-            - uses: actions/checkout@v3
+            - uses: actions/checkout@v4
               if: ${{steps.release.outputs.created_release}}
-            - uses: actions/setup-node@v3
+            - uses: actions/setup-node@v4
               with:
                   node-version: ${{ matrix.node-version }}
-                  cache: "npm"
               if: ${{ steps.release.outputs.release_created }}
             - run: npm ci
               if: ${{ steps.release.outputs.release_created }}
             - run: npm publish
-              if: ${{ steps.release.outputs.release_created }}
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_KEY }}
+              if: ${{ steps.release.outputs.release_created }}
