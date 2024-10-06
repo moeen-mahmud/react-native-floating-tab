@@ -1,7 +1,7 @@
 import { Ionicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
 import React from "react";
-import { ExpandBarTab, RollingBallTab, SharpCurvyTab, SlideBarTab, ElevatedTab } from "react-native-floating-tab";
+// import { ExpandBarTab, RollingBallTab, SharpCurvyTab, SlideBarTab, ElevatedTab } from "react-native-floating-tab";
 
 import { Colors } from "@/constants/Colors";
 import { useColorScheme } from "@/hooks/useColorScheme";
@@ -17,7 +17,7 @@ export default function TabLayout() {
             }}
             initialRouteName="index"
             backBehavior="history"
-            tabBar={props => <ExpandBarTab {...props} />}
+            // tabBar={props => <ExpandBarTab {...props} />}
             // tabBar={props => <RollingBallTab {...props} />}
             // tabBar={props => <SharpCurvyTab {...props} />}
             // tabBar={props => <SlideBarTab {...props} />}
