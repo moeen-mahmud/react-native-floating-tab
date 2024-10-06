@@ -1,7 +1,9 @@
-import { sizes, TTabBarButton } from "@react-native-floating-tab";
 import { useEffect } from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import Animated, { interpolateColor, useAnimatedStyle, useSharedValue, withSpring, withTiming } from "react-native-reanimated";
+
+import { sizes } from "../../styles";
+import { TTabBarButton } from "../../types";
 
 type TExpandBarTabButton = {
     dimensions: {

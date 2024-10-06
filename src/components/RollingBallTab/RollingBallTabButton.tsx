@@ -1,7 +1,9 @@
-import { sizes, TTabBarButton } from "@react-native-floating-tab";
 import { useEffect } from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import Animated, { interpolate, interpolateColor, useAnimatedStyle, useSharedValue, withSpring } from "react-native-reanimated";
+
+import { sizes } from "../../styles";
+import { TTabBarButton } from "../../types";
 
 type TRollingBallTabButton = {
     setDimensions: ({ height, width, x }: { height: number; width: number; x: number }) => void;

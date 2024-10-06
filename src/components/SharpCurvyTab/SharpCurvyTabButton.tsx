@@ -1,7 +1,9 @@
-import { sizes, springConfig, TTabBarButton } from "@react-native-floating-tab";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 import Animated, { useAnimatedStyle, withSpring } from "react-native-reanimated";
 
+import { springConfig } from "../../config";
+import { sizes } from "../../styles";
+import { TTabBarButton } from "../../types";
 import { CurveSVGComponent } from "../CurveSVG/CurveSVGComponent";
 
 const AnimatedTouchableOpacity = Animated.createAnimatedComponent(TouchableOpacity);
