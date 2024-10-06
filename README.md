@@ -6,11 +6,7 @@ A collection of simple animated floating bottom tabs for React Native. Supports 
 
 ## Demo
 
-![ElevatedTab](./demo/elevated-bar-tab.gif)
-![ExpandBarTab](./demo/expanded-bar-tab.gif)
-![RollingBallTab](./demo/rolling-ball-tab.gif)
-![SharpCurvyTab](./demo/sharp-curvy-tab.gif)
-![SlideBarTab](./demo/slider-bar-tab.gif)
+See the demo of the components here => [Demo](https://imgur.com/a/3S9maUi)
 
 ## Requirements
 
