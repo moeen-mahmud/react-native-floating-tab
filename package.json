@@ -1,6 +1,6 @@
 {
     "name": "react-native-floating-tab",
-    "version": "1.0.5-beta.1",
+    "version": "1.0.6-beta.1",
     "description": "A collection of simple animated floating bottom tabs for React Native. Supports React Navigation and Expo Router.",
     "main": "build/index.js",
     "types": "build/index.d.ts",

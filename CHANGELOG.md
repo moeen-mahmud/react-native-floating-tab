@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.6-beta.1](https://github.com/moeen-mahmud/react-native-floating-tab/compare/v1.0.5-beta.1...v1.0.6-beta.1) (2024-10-06)
+
+
+### Bug Fixes
+
+* workflow flie | updates node version to 22 | remove matrix ([4e41cbb](https://github.com/moeen-mahmud/react-native-floating-tab/commit/4e41cbb46865c34fbf7cb52e44da260a216c748c))
+
 ## [1.0.5-beta.1](https://github.com/moeen-mahmud/react-native-floating-tab/compare/v1.0.4-beta.1...v1.0.5-beta.1) (2024-10-06)
 
 
