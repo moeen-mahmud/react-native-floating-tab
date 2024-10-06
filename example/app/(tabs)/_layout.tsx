@@ -4,7 +4,6 @@ import React from "react";
 
 import { Colors } from "@/constants/Colors";
 import { useColorScheme } from "@/hooks/useColorScheme";
-import { RollingBallTab, SharpCurvyTab, SlideBarTab, ExpandBarTab, ElevatedTab } from "@/lib/components";
 
 export default function TabLayout() {
     const colorScheme = useColorScheme();
