@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.13-beta.1](https://github.com/moeen-mahmud/react-native-floating-tab/compare/v1.0.12-beta.1...v1.0.13-beta.1) (2024-10-06)
+
+
+### Bug Fixes
+
+* experimenting with release ([ec2393b](https://github.com/moeen-mahmud/react-native-floating-tab/commit/ec2393b12e8f8096253cf0f2f1505b55b0972d41))
+* experimenting with release v2 ([403e618](https://github.com/moeen-mahmud/react-native-floating-tab/commit/403e618139e9e866ce1552b93fd4508a50eedaea))
+
 ## [1.0.12-beta.1](https://github.com/moeen-mahmud/react-native-floating-tab/compare/v1.0.11-beta.1...v1.0.12-beta.1) (2024-10-06)
 
 
