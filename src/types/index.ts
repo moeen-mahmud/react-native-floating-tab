@@ -1,4 +1,11 @@
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
+
+export type TColors = {
+    focusColor: string;
+    primaryColor: string;
+    inactiveColor: string;
+};
+
 export type TTabBarButton = {
     isFocused: boolean;
     label: string;
@@ -7,11 +14,7 @@ export type TTabBarButton = {
     icon: any;
     routes: any[];
     onPress: () => void;
-    colors: {
-        focusColor: string;
-        primaryColor: string;
-        inactiveColor: string;
-    };
+    colors: TColors;
     fontSize: number;
 };
 
@@ -22,3 +25,33 @@ export type TTabBar = {
     tabBackgroundColor?: string;
     fontSize?: number;
 } & BottomTabBarProps;
+
+export type TFilteredRoute = {
+    state: BottomTabBarProps["state"];
+    exclude?: string[];
+};
+
+export type TFindLabel = {
+    routeName: string;
+    routes: BottomTabBarProps["state"]["routes"];
+    descriptors: BottomTabBarProps["descriptors"];
+};
+
+export type THandleNavigate = {
+    routeName: string;
+    navigation: BottomTabBarProps["navigation"];
+};
+
+export type TDetermineFocused = {
+    state: BottomTabBarProps["state"];
+    route: BottomTabBarProps["state"]["routes"][0];
+};
+
+export type TMapOperation = {
+    routeName: string;
+    descriptors: BottomTabBarProps["descriptors"];
+    routes: BottomTabBarProps["state"]["routes"];
+    state: BottomTabBarProps["state"];
+    routeKey: string;
+    route: BottomTabBarProps["state"]["routes"][0];
+};

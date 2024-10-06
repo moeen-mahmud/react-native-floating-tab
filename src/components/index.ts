@@ -1,1 +1,5 @@
-export * from "./TabBarV1/TabBarV1";
+export * from "./SharpCurvyTab/SharpCurvyTab";
+export * from "./RollingBallTab/RollingBallTab";
+export * from "./SlideBarTab/SlideBarTab";
+export * from "./ExpandBarTab/ExpandBarTab";
+export * from "./ElevatedTab/ElevatedTab";

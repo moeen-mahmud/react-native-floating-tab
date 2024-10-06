@@ -21,7 +21,7 @@ export default function TabLayout() {
             // tabBar={props => <RollingBallTab {...props} />}
             // tabBar={props => <SharpCurvyTab {...props} />}
             // tabBar={props => <SlideBarTab {...props} />}
-            tabBar={props => <ElevatedTab {...props} />}
+            // tabBar={props => <ElevatedTab {...props} />}
         >
             <Tabs.Screen
                 name="calendar"
