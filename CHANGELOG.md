@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.11-beta.1](https://github.com/moeen-mahmud/react-native-floating-tab/compare/v1.0.10-beta.1...v1.0.11-beta.1) (2024-10-06)
+
+
+### Bug Fixes
+
+* renames env variable ([f8b3404](https://github.com/moeen-mahmud/react-native-floating-tab/commit/f8b3404e4bec22907ad8efd2ff4f6c1b3b90f780))
+
 ## [1.0.10-beta.1](https://github.com/moeen-mahmud/react-native-floating-tab/compare/v1.0.9-beta.1...v1.0.10-beta.1) (2024-10-06)
 
 
