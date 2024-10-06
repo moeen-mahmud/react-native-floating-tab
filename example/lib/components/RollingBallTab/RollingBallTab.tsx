@@ -1,12 +1,12 @@
 import { useEffect, useMemo, useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { Platform, StyleSheet, View } from "react-native";
 import Animated, { useAnimatedStyle, useSharedValue, withSpring } from "react-native-reanimated";
 
 import { RollingBallTabButton } from "@/lib/components/RollingBallTab/RollingBallTabButton";
 import { colorFamilies, iconSize, initialFontSize } from "@/lib/config";
 import { shadow, tabbar, tabContainer } from "@/lib/styles";
 import { TTabBar } from "@/lib/types";
-import { filteredRoute, findLabel } from "@/lib/utils";
+import { filteredRoute, handleNavigate, mapOperation } from "@/lib/utils";
 
 export const RollingBallTab: React.FC<TTabBar> = ({
     state,
@@ -39,35 +39,36 @@ export const RollingBallTab: React.FC<TTabBar> = ({
 
     const routes = useMemo(() => filteredRoute({ state, exclude: ["_sitemap", "+not-found"] }), [state.routes]);
 
-    const handleOnPress = (routeName: string) => {
-        navigation.navigate(routeName);
-    };
-
     return (
         <View
             style={[
                 {
                     ...styles.tabbar,
                     backgroundColor: primaryColor,
-                    bottom: insets.bottom,
+                    bottom: Platform.OS === "ios" ? insets.bottom : insets.bottom + 20,
                 },
                 shadow,
             ]}
         >
             {routes.map(route => {
-                const label = findLabel({
-                    routeName: route.name,
+                const { label, options, isFocused } = mapOperation({
+                    state,
+                    route,
+                    routeKey: route.key,
                     descriptors,
+                    routeName: route.name,
                     routes,
                 });
-                const { options } = descriptors[route.key];
-
-                const isFocused = state.index === state.routes.indexOf(route);
 
                 return (
                     <RollingBallTabButton
                         key={route.name}
-                        onPress={() => handleOnPress(route.name)}
+                        onPress={() =>
+                            handleNavigate({
+                                navigation,
+                                routeName: route.name,
+                            })
+                        }
                         isFocused={isFocused}
                         routeName={route.name}
                         color={isFocused ? primaryColor : inactiveColor}

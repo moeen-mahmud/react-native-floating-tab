@@ -5,7 +5,7 @@ import { ElevatedTabButton } from "@/lib/components/ElevatedTab/ElevatedTabButto
 import { colorFamilies, iconSize, initialFontSize } from "@/lib/config";
 import { shadow, tabbar, tabContainer } from "@/lib/styles";
 import { TTabBar } from "@/lib/types";
-import { filteredRoute, findLabel } from "@/lib/utils";
+import { filteredRoute, handleNavigate, mapOperation } from "@/lib/utils";
 
 export const ElevatedTab: React.FC<TTabBar> = ({
     state,
@@ -18,10 +18,6 @@ export const ElevatedTab: React.FC<TTabBar> = ({
     fontSize = initialFontSize,
 }) => {
     const routes = useMemo(() => filteredRoute({ state, exclude: ["_sitemap", "+not-found"] }), [state.routes]);
-
-    const handleOnPress = (routeName: string) => {
-        navigation.navigate(routeName);
-    };
 
     return (
         <View style={styles.container}>
@@ -36,20 +32,24 @@ export const ElevatedTab: React.FC<TTabBar> = ({
                 ]}
             >
                 {routes.map(route => {
-                    const label = findLabel({
-                        routeName: route.name,
+                    const { label, options, isFocused } = mapOperation({
+                        state,
+                        route,
+                        routeKey: route.key,
                         descriptors,
+                        routeName: route.name,
                         routes,
                     });
-
-                    const { options } = descriptors[route.key];
-
-                    const isFocused = state.index === state.routes.indexOf(route);
 
                     return (
                         <ElevatedTabButton
                             key={route.name}
-                            onPress={() => handleOnPress(route.name)}
+                            onPress={() =>
+                                handleNavigate({
+                                    navigation,
+                                    routeName: route.name,
+                                })
+                            }
                             isFocused={isFocused}
                             routeName={route.name}
                             color={isFocused ? focusColor : inactiveColor}
