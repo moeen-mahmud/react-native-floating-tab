@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.5-beta.1](https://github.com/moeen-mahmud/react-native-floating-tab/compare/v1.0.4-beta.1...v1.0.5-beta.1) (2024-10-06)
+
+
+### Bug Fixes
+
+* workflow flie ([e8f32cc](https://github.com/moeen-mahmud/react-native-floating-tab/commit/e8f32ccba1c574be977f2e5eafdeac8e171b8027))
+
 ## [1.0.4-beta.1](https://github.com/moeen-mahmud/react-native-floating-tab/compare/v1.0.3-beta.1...v1.0.4-beta.1) (2024-10-06)
 
 
