@@ -26,9 +26,9 @@ jobs:
             - uses: actions/checkout@v4
               if: ${{steps.release.outputs.created_release}}
             - uses: actions/setup-node@v4
-              if: ${{ steps.release.outputs.release_created }}
               with:
                   node-version: 22
+              if: ${{ steps.release.outputs.release_created }}
             - run: npm ci
               if: ${{ steps.release.outputs.release_created }}
             - run: npm publish
