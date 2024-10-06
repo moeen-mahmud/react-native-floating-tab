@@ -25,7 +25,6 @@ jobs:
               with:
                   release-type: "node"
                   token: ${{ secrets.RELEASE_KEY }}
-              if: ${{steps.release.outputs.created_release}}
             - uses: actions/setup-node@v4
               with:
                   node-version: ${{ matrix.node-version }}
