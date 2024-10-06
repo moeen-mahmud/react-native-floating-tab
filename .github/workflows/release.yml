@@ -31,6 +31,11 @@ jobs:
               if: ${{ steps.release.outputs.release_created }}
             - run: npm ci
               if: ${{ steps.release.outputs.release_created }}
+            - name: Authenticate to npm
+              run: echo "//registry.npmjs.org/:_authToken=${{secrets.NPM_PUBLISH_KEY}}" > ~/.npmrc
+              env:
+                  NPM_PUBLISH_KEY: ${{ secrets.NPM_PUBLISH_KEY }}
+              if: ${{ steps.release.outputs.release_created }}
             - run: npm publish
               env:
                   NPM_PUBLISH_KEY: ${{ secrets.NPM_PUBLISH_KEY }}
