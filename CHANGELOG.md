@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.10-beta.1](https://github.com/moeen-mahmud/react-native-floating-tab/compare/v1.0.9-beta.1...v1.0.10-beta.1) (2024-10-06)
+
+
+### Bug Fixes
+
+* removes npm ci step ([5fd1b9e](https://github.com/moeen-mahmud/react-native-floating-tab/commit/5fd1b9ef5fc504bbfc3d5409d915b4b8f2fea712))
+
 ## [1.0.9-beta.1](https://github.com/moeen-mahmud/react-native-floating-tab/compare/v1.0.8-beta.1...v1.0.9-beta.1) (2024-10-06)
 
 
