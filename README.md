@@ -19,7 +19,7 @@ See the demo of the components here => [Demo](https://imgur.com/a/3S9maUi)
 ## Installation
 
 ```bash
-npm install react-native-floating-tab@1.0.1-beta.0
+npm install react-native-floating-tab
 
 ```
 
@@ -110,4 +110,4 @@ Then, run the example project as mentioned [above](#running-the-example).
 
 See the [LICENSE](./LICENSE) file for license rights and limitations (MIT).
 
-Build with ❤️ by [Moeen Mahmud](https://github.com/moeen-mahmud)
+Built with ❤️ by [Moeen Mahmud](https://github.com/moeen-mahmud)

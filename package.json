@@ -9,7 +9,6 @@
         "lint": "expo-module lint -- --fix",
         "open:ios": "xed example/ios",
         "open:android": "open -a \"Android Studio\" example/android",
-        "release": "standard-version --no-verify",
         "prepare": "husky",
         "commit": "commit"
     },
@@ -20,8 +19,7 @@
         "floating-tab",
         "bottom-tab",
         "react-navigation",
-        "expo-router",
-        "ReactNativeFloatingTab"
+        "expo-router"
     ],
     "repository": "https://github.com/moeen-mahmud/react-native-floating-tab",
     "bugs": {
@@ -38,8 +36,7 @@
         "@types/react": "^18.0.25",
         "expo-module-scripts": "^3.5.2",
         "expo-modules-core": "^1.12.24",
-        "husky": "^9.1.6",
-        "standard-version": "^9.5.0"
+        "husky": "^9.1.6"
     },
     "peerDependencies": {
         "@react-navigation/bottom-tabs": "*",
