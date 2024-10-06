@@ -14,6 +14,7 @@ import {
 import { useEffect, useMemo, useState } from "react";
 import { Platform, StyleSheet, View } from "react-native";
 import Animated, { useAnimatedStyle, useSharedValue, withSpring } from "react-native-reanimated";
+
 import { SlideBarTabButton } from "./SlideBarTabButton";
 
 export const SlideBarTab: React.FC<TTabBar> = ({
