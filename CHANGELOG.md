@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.12-beta.1](https://github.com/moeen-mahmud/react-native-floating-tab/compare/v1.0.11-beta.1...v1.0.12-beta.1) (2024-10-06)
+
+
+### Bug Fixes
+
+* almighty push | that .release.yml file -&gt; should be release only ([3d7b374](https://github.com/moeen-mahmud/react-native-floating-tab/commit/3d7b374a0287bba0567c0dd7e54379a774b4d1ac))
+
 ## [1.0.11-beta.1](https://github.com/moeen-mahmud/react-native-floating-tab/compare/v1.0.10-beta.1...v1.0.11-beta.1) (2024-10-06)
 
 
