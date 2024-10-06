@@ -30,6 +30,8 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
               if: ${{ steps.release.outputs.release_created }}
+            - run: npm ci
+              if: ${{ steps.release.outputs.release_created }}
             - run: npm publish
               env:
                   NPM_PUBLISH_KEY: ${{ secrets.NPM_PUBLISH_KEY }}
