@@ -56,3 +56,6 @@ package-lock.json
 
 # Expo
 .expo/*
+
+# Package
+*.tgz
