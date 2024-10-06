@@ -1,6 +1,7 @@
 import { ViewStyle } from "react-native";
 import Svg, { Path } from "react-native-svg";
 
+import { sizes } from "@/lib/styles";
 import { TColors } from "@/lib/types";
 
 type TCurveSVGComponent = {
@@ -11,8 +12,8 @@ type TCurveSVGComponent = {
 export const CurveSVGComponent: React.FC<TCurveSVGComponent> = ({ styles, colors }) => {
     return (
         <Svg
-            width={78}
-            height={68}
+            width={sizes.svg.width}
+            height={sizes.svg.height}
             fill="none"
             style={styles}
         >

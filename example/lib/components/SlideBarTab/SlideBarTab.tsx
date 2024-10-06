@@ -4,7 +4,7 @@ import Animated, { useAnimatedStyle, useSharedValue, withSpring } from "react-na
 
 import { SlideBarTabButton } from "@/lib/components/SlideBarTab/SlideBarTabButton";
 import { colorFamilies, iconSize, initialFontSize } from "@/lib/config";
-import { shadow, tabbar, tabContainer } from "@/lib/styles";
+import { shadow, sizes, tabbar, tabContainer } from "@/lib/styles";
 import { TTabBar } from "@/lib/types";
 import { filteredRoute, handleNavigate, mapOperation } from "@/lib/utils";
 
@@ -44,7 +44,7 @@ export const SlideBarTab: React.FC<TTabBar> = ({
                 {
                     ...styles.tabbar,
                     backgroundColor: primaryColor,
-                    bottom: Platform.OS === "ios" ? insets.bottom : insets.bottom + 20,
+                    bottom: Platform.OS === "ios" ? insets.bottom + sizes.insets.bottom.ios : insets.bottom + sizes.insets.bottom.android,
                 },
                 shadow,
             ]}
@@ -106,7 +106,7 @@ export const SlideBarTab: React.FC<TTabBar> = ({
                     style={[
                         {
                             backgroundColor: focusColor,
-                            width: dimensions.width - 20,
+                            width: dimensions.width - sizes.dimensions.widthGap,
                             height: dimensions.height,
                         },
                         styles.highlighter,
@@ -122,8 +122,8 @@ const styles = StyleSheet.create({
         ...tabbar,
         justifyContent: "center",
 
-        marginHorizontal: 20,
-        paddingVertical: 10,
+        marginHorizontal: sizes.margin.horizontal,
+        paddingVertical: sizes.padding.vertical,
     },
 
     highlighterContainer: {
@@ -134,5 +134,5 @@ const styles = StyleSheet.create({
         alignItems: "center",
         left: 0,
     },
-    highlighter: { borderRadius: 50 },
+    highlighter: { borderRadius: sizes.border.circle },
 });

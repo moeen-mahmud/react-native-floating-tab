@@ -5,7 +5,7 @@ import { TTabBar } from "../../types";
 
 import { SharpCurvyTabButton } from "@/lib/components/SharpCurvyTab/SharpCurvyTabButton";
 import { colorFamilies, iconSize, initialFontSize } from "@/lib/config";
-import { shadow, tabbar, tabContainer } from "@/lib/styles";
+import { shadow, sizes, tabbar, tabContainer } from "@/lib/styles";
 import { filteredRoute, handleNavigate, mapOperation } from "@/lib/utils";
 
 export const SharpCurvyTab: React.FC<TTabBar> = ({
@@ -26,7 +26,7 @@ export const SharpCurvyTab: React.FC<TTabBar> = ({
                 style={[
                     {
                         ...styles.tabbar,
-                        bottom: Platform.OS === "ios" ? insets.bottom : insets.bottom + 20,
+                        bottom: Platform.OS === "ios" ? insets.bottom + sizes.insets.bottom.ios : insets.bottom + sizes.insets.bottom.android,
                     },
                     shadow,
                 ]}

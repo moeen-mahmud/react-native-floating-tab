@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import Animated, { interpolateColor, useAnimatedStyle, useSharedValue, withSpring } from "react-native-reanimated";
 
+import { sizes } from "@/lib/styles";
 import { TTabBarButton } from "@/lib/types";
 
 type TSlideBarTabButton = {
@@ -89,7 +90,7 @@ const styles = StyleSheet.create({
         gap: 10,
         flexDirection: "row",
     },
-    icon: { paddingVertical: 8, borderRadius: 50 },
+    icon: { paddingVertical: 8, borderRadius: sizes.border.circle },
     iconWrapper: {
         position: "relative",
         justifyContent: "center",

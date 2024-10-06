@@ -5,6 +5,7 @@ import { springConfig } from "../../config";
 import { TTabBarButton } from "../../types";
 
 import { CurveSVGComponent } from "@/lib/components/CurveSVG/CurveSVGComponent";
+import { sizes } from "@/lib/styles";
 
 const AnimatedTouchableOpacity = Animated.createAnimatedComponent(TouchableOpacity);
 
@@ -76,7 +77,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         width: 70,
         height: 68,
-        paddingVertical: 10,
+        paddingVertical: sizes.padding.vertical,
     },
     svg: {
         position: "absolute",
@@ -84,6 +85,6 @@ const styles = StyleSheet.create({
     },
     iconWrapper: {
         padding: 8,
-        borderRadius: 50,
+        borderRadius: sizes.border.circle,
     },
 });

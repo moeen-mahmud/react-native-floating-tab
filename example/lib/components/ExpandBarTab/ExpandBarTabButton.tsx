@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import Animated, { interpolateColor, useAnimatedStyle, useSharedValue, withSpring, withTiming } from "react-native-reanimated";
 
+import { sizes } from "@/lib/styles";
 import { TTabBarButton } from "@/lib/types";
 
 type TExpandBarTabButton = {
@@ -110,9 +111,9 @@ const styles = StyleSheet.create({
         zIndex: 3,
         justifyContent: "center",
         alignItems: "center",
-        gap: 10,
+        gap: sizes.gap.regular,
         flexDirection: "row",
     },
-    highlightContainer: { position: "absolute", borderRadius: 50, left: 5 },
-    icon: { paddingVertical: 8, borderRadius: 50 },
+    highlightContainer: { position: "absolute", borderRadius: sizes.border.circle, left: 5 },
+    icon: { paddingVertical: 8, borderRadius: sizes.border.circle },
 });

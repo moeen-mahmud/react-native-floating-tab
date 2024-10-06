@@ -4,7 +4,7 @@ import { useSharedValue, withSpring } from "react-native-reanimated";
 
 import { ExpandBarTabButton } from "@/lib/components/ExpandBarTab/ExpandBarTabButton";
 import { colorFamilies, iconSize, initialFontSize } from "@/lib/config";
-import { shadow, tabbar, tabContainer } from "@/lib/styles";
+import { shadow, sizes, tabbar, tabContainer } from "@/lib/styles";
 import { TTabBar } from "@/lib/types";
 import { filteredRoute, handleNavigate, mapOperation } from "@/lib/utils";
 
@@ -38,7 +38,7 @@ export const ExpandBarTab: React.FC<TTabBar> = ({
                 {
                     ...styles.tabbar,
                     backgroundColor: primaryColor,
-                    bottom: Platform.OS === "ios" ? insets.bottom : insets.bottom + 20,
+                    bottom: Platform.OS === "ios" ? insets.bottom + sizes.insets.bottom.ios : insets.bottom + sizes.insets.bottom.android,
                 },
                 shadow,
             ]}
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
         ...tabbar,
         justifyContent: "center",
 
-        marginHorizontal: 20,
-        paddingVertical: 10,
+        marginHorizontal: sizes.margin.horizontal,
+        paddingVertical: sizes.padding.vertical,
     },
 });

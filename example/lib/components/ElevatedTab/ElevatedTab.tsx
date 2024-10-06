@@ -3,7 +3,7 @@ import { Platform, StyleSheet, View } from "react-native";
 
 import { ElevatedTabButton } from "@/lib/components/ElevatedTab/ElevatedTabButton";
 import { colorFamilies, iconSize, initialFontSize } from "@/lib/config";
-import { shadow, tabbar, tabContainer } from "@/lib/styles";
+import { shadow, sizes, tabbar, tabContainer } from "@/lib/styles";
 import { TTabBar } from "@/lib/types";
 import { filteredRoute, handleNavigate, mapOperation } from "@/lib/utils";
 
@@ -26,7 +26,7 @@ export const ElevatedTab: React.FC<TTabBar> = ({
                     {
                         ...styles.tabbar,
                         backgroundColor: primaryColor,
-                        bottom: Platform.OS === "ios" ? insets.bottom : insets.bottom + 20,
+                        bottom: Platform.OS === "ios" ? insets.bottom + sizes.insets.bottom.ios : insets.bottom + sizes.insets.bottom.android,
                     },
                     shadow,
                 ]}

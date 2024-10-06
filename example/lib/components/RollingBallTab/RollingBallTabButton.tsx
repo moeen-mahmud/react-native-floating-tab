@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import Animated, { interpolate, interpolateColor, useAnimatedStyle, useSharedValue, withSpring } from "react-native-reanimated";
 
+import { sizes } from "@/lib/styles";
 import { TTabBarButton } from "@/lib/types";
 
 type TRollingBallTabButton = {
@@ -95,6 +96,6 @@ const styles = StyleSheet.create({
     },
     icon: {
         padding: 8,
-        borderRadius: 50,
+        borderRadius: sizes.border.circle,
     },
 });

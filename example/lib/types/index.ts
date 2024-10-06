@@ -1,4 +1,4 @@
-import { BottomTabBarProps, BottomTabNavigationOptions } from "@react-navigation/bottom-tabs";
+import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 
 export type TColors = {
     focusColor: string;

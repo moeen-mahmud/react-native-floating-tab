@@ -5,6 +5,8 @@ import Animated, { interpolateColor, useAnimatedStyle, useSharedValue, withSprin
 
 import { TTabBarButton } from "../../types";
 
+import { sizes } from "@/lib/styles";
+
 type TElevatedTabButton = TTabBarButton & {
     options: BottomTabNavigationOptions;
 };
@@ -89,6 +91,6 @@ const styles = StyleSheet.create({
         alignItems: "center",
         width: 70,
         height: 68,
-        paddingVertical: 10,
+        paddingVertical: sizes.padding.vertical,
     },
 });
