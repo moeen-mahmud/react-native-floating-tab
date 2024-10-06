@@ -21,7 +21,10 @@
         "react-navigation",
         "expo-router"
     ],
-    "repository": "https://github.com/moeen-mahmud/react-native-floating-tab",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/moeen-mahmud/react-native-floating-tab.git"
+    },
     "bugs": {
         "url": "https://github.com/moeen-mahmud/react-native-floating-tab/issues"
     },

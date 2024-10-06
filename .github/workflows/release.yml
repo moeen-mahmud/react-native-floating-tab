@@ -19,12 +19,12 @@ jobs:
             matrix:
                 node-version: [22.x]
         steps:
+            - uses: actions/checkout@v4
             - uses: googleapis/release-please-action@v4
               id: release
               with:
-                  token: ${{ secrets.RELEASE_KEY }}
                   release-type: "node"
-            - uses: actions/checkout@v4
+                  token: ${{ secrets.RELEASE_KEY }}
               if: ${{steps.release.outputs.created_release}}
             - uses: actions/setup-node@v4
               with:
