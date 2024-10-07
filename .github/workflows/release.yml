@@ -28,11 +28,11 @@ jobs:
             - uses: actions/setup-node@v4
               with:
                   node-version: ${{ matrix.node-version }}
-                  registry-url: "https://registry.npmjs.org/react-native-floating-tab"
+                  registry-url: "https://registry.npmjs.org/"
               if: ${{ steps.release.outputs.release_created }}
             - run: npm ci
               if: ${{ steps.release.outputs.release_created }}
             - run: npm publish
               env:
-                  NPM_PUBLISH_KEY: ${{ secrets.NPM_PUBLISH_KEY }}
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_KEY }}
               if: ${{ steps.release.outputs.release_created }}
