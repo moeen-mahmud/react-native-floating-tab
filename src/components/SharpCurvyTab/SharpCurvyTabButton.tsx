@@ -10,17 +10,13 @@ const AnimatedTouchableOpacity = Animated.createAnimatedComponent(TouchableOpaci
 
 export const SharpCurvyTabButton: React.FC<TTabBarButton> = ({ isFocused, label, routeName, color, icon, routes, colors, fontSize, ...props }) => {
     const animatedStyles = useAnimatedStyle(() => {
-        const scale = withSpring(isFocused ? 1.4 : 1, springConfig);
-
         const backgroundColor = withSpring(isFocused ? colors.focusColor : "transparent", springConfig);
 
         return {
             backgroundColor,
-
-            transform: [isFocused ? { translateY: withSpring(-35) } : { translateY: withSpring(0) }, { scale }],
+            transform: [{ translateY: withSpring(isFocused ? -35 : 0) }],
         };
     }, [isFocused]);
-
     //TODO: Work in progress
     // const shouldCurveFirstItem = useMemo(() => {
     //     const index = routes.findIndex(route => route.name === routeName);
@@ -55,7 +51,9 @@ export const SharpCurvyTabButton: React.FC<TTabBarButton> = ({ isFocused, label,
                     colors={colors}
                 />
             )}
-            <Animated.View style={[animatedStyles, styles.iconWrapper]}>{icon}</Animated.View>
+            <Animated.View style={[{ transform: [{ scale: withSpring(isFocused ? 1.4 : 1, springConfig) }] }, animatedStyles, styles.iconWrapper]}>
+                {icon}
+            </Animated.View>
 
             <Text
                 style={{

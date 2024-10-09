@@ -39,9 +39,6 @@ export const ElevatedTabButton: React.FC<TElevatedTabButton> = ({
                 {
                     translateY: withSpring(isFocused ? -2 : 0),
                 },
-                {
-                    scale: withSpring(isFocused ? 0.9 : 1),
-                },
             ],
         };
     }, [isFocused]);
@@ -63,7 +60,20 @@ export const ElevatedTabButton: React.FC<TElevatedTabButton> = ({
             style={[styles.container]}
             {...props}
         >
-            <Animated.View style={[animatedStyles]}>{icon}</Animated.View>
+            <Animated.View
+                style={[
+                    {
+                        transform: [
+                            {
+                                scale: withSpring(isFocused ? 0.9 : 1),
+                            },
+                        ],
+                    },
+                    animatedStyles,
+                ]}
+            >
+                {icon}
+            </Animated.View>
 
             {label && isFocused && (
                 <Animated.Text
