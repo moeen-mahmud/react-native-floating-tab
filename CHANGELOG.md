@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.19-beta.1](https://github.com/moeen-mahmud/react-native-floating-tab/compare/v1.0.18-beta.1...v1.0.19-beta.1) (2024-10-10)
+
+
+### Bug Fixes
+
+* reconfigures the whole project to resolve the resolution error while installed from npm ([236208b](https://github.com/moeen-mahmud/react-native-floating-tab/commit/236208bcd3028f8fb27633ae69998e0f2bbb81cd))
+
 ## [1.0.18-beta.1](https://github.com/moeen-mahmud/react-native-floating-tab/compare/v1.0.17-beta.1...v1.0.18-beta.1) (2024-10-10)
 
 
