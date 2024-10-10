@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.20-beta.1](https://github.com/moeen-mahmud/react-native-floating-tab/compare/v1.0.19-beta.1...v1.0.20-beta.1) (2024-10-10)
+
+
+### Bug Fixes
+
+* adds the new configurations in package.json and tsconfig.json in order to module resolution fix ([c01aa82](https://github.com/moeen-mahmud/react-native-floating-tab/commit/c01aa82ac0942c3a098305387c74ba6b13cb7186))
+* trying to fix the resolution error of the npm package ([d62b099](https://github.com/moeen-mahmud/react-native-floating-tab/commit/d62b099dcdd649488302e838a7a7b3d7e7ae0786))
+
 ## [1.0.19-beta.1](https://github.com/moeen-mahmud/react-native-floating-tab/compare/v1.0.18-beta.1...v1.0.19-beta.1) (2024-10-10)
 
 
