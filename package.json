@@ -5,9 +5,10 @@
     "main": "build/index.js",
     "types": "build/index.d.ts",
     "files": [
-        "build",
-        "src"
+        "build/**/*",
+        "src/**/*"
     ],
+    "type": "module",
     "scripts": {
         "build": "expo-module build",
         "lint": "expo-module lint -- --fix",
@@ -18,6 +19,9 @@
     },
     "eslintConfig": {
         "extends": "universe/native"
+    },
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org/"
     },
     "keywords": [
         "react-native",
@@ -65,6 +69,7 @@
     },
     "peerDependencies": {
         "@react-navigation/native": "*",
+        "@react-navigation/bottom-tabs": "*",
         "expo": "*",
         "react": "*",
         "react-native": "*",

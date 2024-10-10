@@ -12,6 +12,6 @@
         "jsx": "react-native"
     },
 
-    "include": ["./src"],
+    "include": ["./src/**/*"],
     "exclude": ["**/__mocks__/*", "**/__tests__/*"]
 }
