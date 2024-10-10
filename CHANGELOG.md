@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.21-beta.1](https://github.com/moeen-mahmud/react-native-floating-tab/compare/v1.0.20-beta.1...v1.0.21-beta.1) (2024-10-10)
+
+
+### Bug Fixes
+
+* fixes the sharp curvy tab scaling issues while active ([b7541da](https://github.com/moeen-mahmud/react-native-floating-tab/commit/b7541da94775c816b1844e9bf1e00b7a5649cf72))
+
 ## [1.0.20-beta.1](https://github.com/moeen-mahmud/react-native-floating-tab/compare/v1.0.19-beta.1...v1.0.20-beta.1) (2024-10-10)
 
 
