@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.16-beta.1](https://github.com/moeen-mahmud/react-native-floating-tab/compare/v1.0.15-beta.1...v1.0.16-beta.1) (2024-10-09)
+
+
+### Bug Fixes
+
+* updates the base tsconfig.json to generate declaration | updates the release file ([4ae5857](https://github.com/moeen-mahmud/react-native-floating-tab/commit/4ae5857b6b260527333c0f3ca2802e22ac794cd9))
+
 ## [1.0.15-beta.1](https://github.com/moeen-mahmud/react-native-floating-tab/compare/v1.0.14-beta.1...v1.0.15-beta.1) (2024-10-07)
 
 
