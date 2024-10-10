@@ -4,6 +4,10 @@
     "description": "A collection of simple animated floating bottom tabs for React Native. Supports React Navigation and Expo Router.",
     "main": "build/index.js",
     "types": "build/index.d.ts",
+    "files": [
+        "build",
+        "src"
+    ],
     "scripts": {
         "build": "expo-module build",
         "lint": "expo-module lint -- --fix",
@@ -12,6 +16,9 @@
         "prepare": "husky",
         "commit": "commit"
     },
+    "eslintConfig": {
+        "extends": "universe/native"
+    },
     "keywords": [
         "react-native",
         "expo",
@@ -19,7 +26,9 @@
         "floating-tab",
         "bottom-tab",
         "react-navigation",
-        "expo-router"
+        "expo-router",
+        "ios",
+        "android"
     ],
     "repository": {
         "type": "git",
@@ -36,19 +45,38 @@
         "@commitlint/config-conventional": "^19.5.0",
         "@commitlint/cz-commitlint": "^19.5.0",
         "@commitlint/prompt-cli": "^19.5.0",
+        "@eslint/eslintrc": "^3.1.0",
+        "@eslint/js": "^9.12.0",
+        "@react-navigation/bottom-tabs": "^6.6.1",
+        "@react-navigation/native": "^6.1.18",
         "@types/react": "^18.0.25",
         "conventional-changelog-atom": "^5.0.0",
+        "eslint": "8",
+        "eslint-config-universe": "^13.0.0",
+        "expo": "^51.0.37",
         "expo-module-scripts": "^3.5.2",
         "expo-modules-core": "^1.12.24",
-        "husky": "^9.1.6"
+        "husky": "^9.1.6",
+        "prettier": "^3.3.3",
+        "react": "^18.3.1",
+        "react-native": "^0.75.4",
+        "react-native-reanimated": "^3.15.4",
+        "react-native-svg": "^15.7.1"
     },
     "peerDependencies": {
-        "@react-navigation/bottom-tabs": "*",
         "@react-navigation/native": "*",
         "expo": "*",
         "react": "*",
         "react-native": "*",
         "react-native-reanimated": "*",
         "react-native-svg": "*"
+    },
+    "peerDependenciesMeta": {
+        "@types/react-native": {
+            "optional": true
+        },
+        "@types/react": {
+            "optional": true
+        }
     }
 }

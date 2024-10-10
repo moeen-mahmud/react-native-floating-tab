@@ -3,3 +3,8 @@ build
 
 *.md
 *-lock.json
+
+.vscode
+.eslintrc.config.js
+.prettierrc
+.commitlint.config.ts
