@@ -14,7 +14,7 @@
         "lint": "expo-module lint -- --fix",
         "open:ios": "xed example/ios",
         "open:android": "open -a \"Android Studio\" example/android",
-        "prepare": "husky",
+        "prepare": "expo-module build && husky",
         "commit": "commit"
     },
     "eslintConfig": {
