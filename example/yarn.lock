@@ -7053,10 +7053,10 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
-react-native-floating-tab@^1.0.20-beta.1:
-  version "1.0.20-beta.1"
-  resolved "https://registry.yarnpkg.com/react-native-floating-tab/-/react-native-floating-tab-1.0.20-beta.1.tgz#9d8fbe99bb047876615739f74c78dd443d673e8c"
-  integrity sha512-sO0raa1HANIlNrFbwE1Ix/VY8g/u2GcjoS3KIGc/ljQE7oWpSl3U3nf3q2qv4rECP51OSbhhf+W0UXnQDW3nHg==
+react-native-floating-tab@^1.0.21-beta.1:
+  version "1.0.21-beta.1"
+  resolved "https://registry.yarnpkg.com/react-native-floating-tab/-/react-native-floating-tab-1.0.21-beta.1.tgz#b8d9c572f987aa31996a2fa205166457b3d96ee7"
+  integrity sha512-T2V94DUiKX7r/SOgEVJ9iWvgZ6IyTTsPAFdgcuUPoeZSX+0Jc0kNYmjLh+yfqUyVorWQbP4xEJZVHEQwBOm93Q==
 
 react-native-gesture-handler@~2.16.1:
   version "2.16.2"

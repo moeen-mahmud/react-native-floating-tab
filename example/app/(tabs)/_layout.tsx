@@ -18,7 +18,7 @@ export default function TabLayout() {
             initialRouteName="index"
             backBehavior="history"
             // tabBar={props => <RollingBallTab {...props} />}
-            tabBar={props => <SharpCurvyTab {...props} />}
+            // tabBar={props => <SharpCurvyTab {...props} />}
             // tabBar={props => <SlideBarTab {...props} />}
             // tabBar={props => <ElevatedTab {...props} />}
             // tabBar={props => <ExpandBarTab {...props} />}
