@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.17-beta.1](https://github.com/moeen-mahmud/react-native-floating-tab/compare/v1.0.16-beta.1...v1.0.17-beta.1) (2024-10-10)
+
+
+### Bug Fixes
+
+* adds the files to resolve the npm resolution and changed the package manager ([411305e](https://github.com/moeen-mahmud/react-native-floating-tab/commit/411305e2aa89b024d32954243ba5458ef6149250))
+
 ## [1.0.16-beta.1](https://github.com/moeen-mahmud/react-native-floating-tab/compare/v1.0.15-beta.1...v1.0.16-beta.1) (2024-10-09)
 
 
